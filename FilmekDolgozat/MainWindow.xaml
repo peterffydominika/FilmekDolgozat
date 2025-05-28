@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10,10,10,10">
+            <Button x:Name="Lekerdez" Content="Lekérdez" Margin="10" Click="Betoltes_Click" Height="31" Width="268"/>
+            <Label x:Name="lbFilmAzon" Content="-" Width="268" Margin="10"/>
+            <TextBox x:Name="tb1" Text="TextBox" Width="268" Height="26" Margin="10"/>
+            <TextBox x:Name="tb2" Text="TextBox" Width="268" Height="26" Margin="10"/>
+            <TextBox x:Name="tb3" Text="TextBox" Width="268" Height="26" Margin="10"/>
+            <TextBox x:Name="tb4" Text="TextBox" Width="268" Height="26" Margin="10"/>
+            <TextBox x:Name="tb5" Text="TextBox" Width="268" Height="26" Margin="10"/>
+            <Button x:Name="modosit" Content="Módosít" Width="268" Height="26"/>
+        </StackPanel>
+        <DataGrid x:Name="dgAdatok" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Window>
