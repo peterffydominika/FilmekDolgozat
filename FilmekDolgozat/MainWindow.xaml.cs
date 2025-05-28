@@ -22,6 +22,7 @@ namespace FilmekDolgozat
     public partial class MainWindow : Window
     {
         MySqlConnection kapcs = new MySqlConnection("server = srv1.tarhely.pro;database = v2labgwj_12a; uid =v2labgwj_12a; password = 'HASnEeKvbDEPGgvTZubG';");
+        List<Film> filmek = new List<Film>();
         public MainWindow()
         {
             InitializeComponent();
