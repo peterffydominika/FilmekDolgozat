@@ -26,6 +26,25 @@ namespace FilmekDolgozat
         public MainWindow()
         {
             InitializeComponent();
+            kapcs.Open();
+            var lekerdezes = new MySqlCommand("SELECT * FROM peterffyd_filmek", kapcs).ExecuteReader();
+            dgAdatok.ItemsSource = filmek;
+            while (lekerdezes.Read())
+            {
+                var film = new Film(lekerdezes["filmazon"].ToString(), lekerdezes["cim"].ToString(), Convert.ToInt32(lekerdezes["ev"]), lekerdezes["szines"].ToString(), lekerdezes["mufaj"].ToString(), Convert.ToInt32(lekerdezes["hossz"]));
+                filmek.Add(film);
+            }
+            kapcs.Close();
+        }
+
+        private void dgAdatok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lbFilmAzon.Content = ((Film)dgAdatok.SelectedItem).Filmazon;
+            tb1.Text = ((Film)dgAdatok.SelectedItem).Cim;
+            tb2.Text = ((Film)dgAdatok.SelectedItem).Ev.ToString();
+            tb3.Text = ((Film)dgAdatok.SelectedItem).Szines;
+            tb4.Text = ((Film)dgAdatok.SelectedItem).Mufaj;
+            tb5.Text = ((Film)dgAdatok.SelectedItem).Hossz.ToString();
         }
     }
 }
