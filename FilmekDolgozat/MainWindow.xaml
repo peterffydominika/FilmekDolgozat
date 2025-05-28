@@ -12,7 +12,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10,10,10,10">
-            <Button x:Name="Lekerdez" Content="Lekérdez" Margin="10" Height="31" Width="268"/>
+            <Button x:Name="Lekerdez" Content="Lekérdez" Margin="10" Height="31" Width="268" Click="Lekerdez_Click"/>
             <Label x:Name="lbFilmAzon" Content="-" Width="268" Margin="10"/>
             <TextBox x:Name="tb1" Width="268" Height="26" Margin="10"/>
             <TextBox x:Name="tb2" Width="268" Height="26" Margin="10"/>
