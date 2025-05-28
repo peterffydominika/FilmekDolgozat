@@ -19,7 +19,7 @@
             <TextBox x:Name="tb3" Width="268" Height="26" Margin="10"/>
             <TextBox x:Name="tb4" Width="268" Height="26" Margin="10"/>
             <TextBox x:Name="tb5" Width="268" Height="26" Margin="10"/>
-            <Button x:Name="modosit" Content="Módosít" Width="268" Height="26"/>
+            <Button x:Name="modosit" Content="Módosít" Width="268" Height="26" Click="modosit_Click"/>
         </StackPanel>
         <DataGrid x:Name="dgAdatok" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dgAdatok_SelectionChanged"/>
     </Grid>

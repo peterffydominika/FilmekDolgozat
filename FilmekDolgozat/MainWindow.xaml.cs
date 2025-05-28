@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,12 @@ namespace FilmekDolgozat
             tb5.Text = ((Film)dgAdatok.SelectedItem).Hossz.ToString();
         }
 
-        
+        private void modosit_Click(object sender, RoutedEventArgs e)
+        {
+            kapcs.Open();
+            new MySqlCommand($"UPDATE peterffyd_filmek SET cim = '{tb1.Text}', ev = { tb2.Text }, szines = '{tb3.Text}', mufaj = '{tb4.Text}', hossz = { tb5.Text} where filmazon = '{lbFilmAzon.Content}'", kapcs).ExecuteNonQuery();
+            kapcs.Close();
+            dgAdatok.Items.Refresh();
+        }
     }
 }
